@@ -10,7 +10,7 @@
     "dev-server": "webpack-dev-server",
     "test": "jest --config=jest.config.json",
     "start": "node server/server.js",
-    "heroku-postbuild":"yarn run build:prod"
+    "heroku-postbuild": "yarn run build:prod"
   },
   "dependencies": {
     "babel-cli": "6.24.1",
@@ -52,8 +52,8 @@
     "babel-loader": "7.1.1",
     "webpack-cli": "^3.3.11"
   },
-  "engines" : { 
-    "npm" : "6.4.1",
-    "node" : "10.15.1" 
-  } 
+  "engines": {
+    "npm": "6.4.1",
+    "node": "10.15.1"
+  }
 }
