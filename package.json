@@ -51,5 +51,9 @@
     "babel-core": "6.25.0",
     "babel-loader": "7.1.1",
     "webpack-cli": "^3.3.11"
-  }
+  },
+  "engines" : { 
+    "npm" : ">=6.4.1",
+    "node" : ">=10.15.1" 
+  } 
 }
