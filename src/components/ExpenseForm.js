@@ -4,7 +4,6 @@ import {SingleDatePicker} from 'react-dates';
 
 
 const now = moment();
-console.log(now.format('MMM Do, YYYY'));
 
 class ExpenseForm extends React.Component {
     constructor(props) {
@@ -49,7 +48,7 @@ class ExpenseForm extends React.Component {
         }else{
             this.props.onSubmit({
                 description: this.state.description,
-                amount: parseFloat(this.state.amount, 10) * 100,
+                amount: parseFloat(this.state.amount, 10),
                 createdAt: this.state.createdAt.valueOf(),
                 note: this.state.note
 
