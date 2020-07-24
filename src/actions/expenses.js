@@ -26,11 +26,22 @@ export const startAddExpense = (expenseData = {}) => {
     };
 };
 
-//Remove expense
+//REMOVE_EXPENSE
 export const removeExpense = (id) => {
     return  {
         type: 'REMOVE_EXPENSE',
         id
+    };
+};
+
+//START_REMOVE_EXPENSE
+export const startRemoveExpense = (id) =>{
+    return (dispatch) => {
+        return database.ref(`expenses/${id}`)
+        .remove()
+        .then(() => {
+            dispatch(removeExpense(id))
+        });
     };
 };
 
@@ -41,12 +52,26 @@ export const editExpense = (id, updates) => ({
     updates
 });
 
+//SET_EDIT_EXPENSES
+export const startEditExpense = (id, updates) => {
+    return (dispatch) => {
+        return database.ref(`expenses/${id}`)
+        .update({
+            ...updates
+        })
+        .then(() => {
+            dispatch(editExpense(id, updates));
+        });
+    };
+};
+
 //SET_EXPENSES
 export const setExpenses = (expenses) => ({
     type: 'SET_EXPENSES',
     expenses
 });
 
+//START_SET_EXPENSES
 export const startSetExpenses = () => {
     return (dispatch)  => {
        return database.ref('expenses')
