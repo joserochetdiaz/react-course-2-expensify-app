@@ -10,6 +10,11 @@
     text-decoration: none;
 }
 
+.button--remove {
+    @extend .button;
+    background-color: #888;
+}
+
 .button--link {
     background: none;
 }

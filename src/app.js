@@ -14,6 +14,7 @@ import 'react-dates/initialize';
 import {firebase} from './firebase/firebase';
 import database from './firebase/firebase';
 import { createStore } from 'redux';
+import LodaingPage from './components/LoadingPage';
 
 
 const store = configureStore();
@@ -32,8 +33,8 @@ const renderApp = () => {
     }
 };
 
-ReactDOM.render(<p>Loading...</p>, document.getElementById('app'))
-
+ReactDOM.render(<LodaingPage/>, document.getElementById('app'))
+/*
 firebase.auth().onAuthStateChanged((user) => {
     if(user){
         store.dispatch(login(user.uid))
@@ -50,4 +51,4 @@ firebase.auth().onAuthStateChanged((user) => {
         history.push('/');
     }
 });
- 
+*/
